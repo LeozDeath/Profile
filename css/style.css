@@ -1,0 +1,443 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: #1f1f1f;
+    color: white;
+}
+
+header{
+    margin-top: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 9%;
+    background-color: transparent;
+    filter: drop-shadow();
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo{
+    font-size: 4rem;
+    color:white;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+    text-decoration: none;
+}
+
+.logo span{
+    color: rgb(58, 127, 255);
+}
+
+.logo:hover{
+    transform: scale(1.1);
+}
+
+nav a{
+    font-size: 2.4rem;
+    color: white;
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover,
+nav a.active{
+    color: rgb(58, 127, 255);
+    border-bottom: rgb(58, 127, 255);
+}
+
+.menu-icon {
+    display: none;
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+    z-index: 101;
+}
+
+@media (max-width:995px){
+
+    .menu-icon {
+        display: block;
+    }
+
+    nav {
+        position: absolute;
+        display: none;
+        top: 70px; /* Adjusted below header */
+        right: 0;
+        width: 50%;
+        background-color: #1f1f1f;
+        padding: 2rem;
+        border-left: 3px solid rgb(58, 127, 255);
+        border-bottom-left-radius: 1.5rem;
+        z-index: 100;
+      }
+    
+      /* Show the navigation when active (slide-in animation) */
+      nav.active {
+        display: block;
+        animation: slide-in 0.3s ease-out forwards;
+      }
+    
+      /* Animasi masuk (slide-in) */
+      @keyframes slide-in {
+        from {
+          opacity: 0;
+          transform: translateX(100%);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+    
+      /* Animasi keluar (slide-out) */
+      @keyframes slide-out {
+        from {
+          opacity: 1;
+          transform: translateX(0);
+        }
+        to {
+          opacity: 0;
+          transform: translateX(100%);
+        }
+      }
+    
+      /* Add this class for sliding out */
+      nav.closing {
+        animation: slide-out 0.3s ease-out forwards;
+      }
+    
+      nav.closing.active {
+        display: block;
+      }
+    
+      nav a {
+        display: block;
+        font-size: 2rem;
+        margin: 2rem 0;
+        color: white;
+      }
+
+    nav a.hover,
+    nav a.active{
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border-bottom: 0.5rem solid rgb(58, 127, 255);
+    }
+}
+
+section{
+    min-height: 100vh;
+    padding: 3rem 9% ;
+}
+
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    background-color: #1f1f1f;
+}
+
+.home .home-content h1{
+    font-size: 6rem;
+    font-size: 700;
+    line-height: 1.3;
+}
+
+span{
+    color: rgb(58, 127, 255);
+}
+
+
+.home-content h3{
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.home-content p{
+    font-size: 2.4rem;
+}
+
+.home-img{
+    border-radius: 50%;
+}
+
+.home-img img{
+    position: relative;
+    width: 25vw;
+    border-radius: 50%;
+    box-shadow: 0 0 25px solid;
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+
+.home-img img:hover{
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.social-icon a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 6rem;
+    height: 6rem;
+    background-color: transparent;
+    border: 0.2rem solid rgb(58, 127, 255);
+    font-size: 2rem;
+    border-radius: 50%;
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s;
+    color: rgb(58, 127, 255);
+}
+
+.social-icon a:hover{
+    color: black;
+    transform: scale(1.3) translateY(-5px);
+    background-color: rgb(58, 127, 255);
+    box-shadow: 0 0 25px rgb(58, 127, 255);
+}
+
+.btn{
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background-color: black;
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: rgb(58, 127, 255);
+    letter-spacing: 0.3rem;
+    font-weight: 600;
+    border: 2px solid rgb(58, 127, 255);
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.btn:hover{
+    transform: scale3d(1.03);
+    background-color: rgb(58, 127, 255);
+    color: black;
+    box-shadow: 0 0 25px rgb(58, 127, 255);
+}
+
+@media(max-width:995px){
+    .home{
+        flex-direction: column;
+        margin: 5rem 4rem;
+    }
+
+    .home .home-content h3{
+        font-size: 2.5rem;
+    }
+    
+    .home .home-content h1{
+        font-size: 5rem;
+    }
+
+    .home-img img{
+        width: 70vw;
+        margin-top: 4rem;   
+    }
+}
+
+.skills {
+    text-align: center;
+    padding: 3rem 9%; /* Kurangi padding bagian atas dan bawah */
+    background-color: #1f1f1f;
+    color: white;
+}
+
+.skills h2 {
+    font-size: 4rem;
+    margin-bottom: 2rem; /* Kurangi margin bawah untuk judul */
+    color: rgb(58, 127, 255);
+}
+
+  .skill-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10rem;
+    flex-wrap: wrap;
+  }
+  
+  .skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s;
+  }
+  
+  .skill img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    transition: transform 0.3s;
+  }
+  
+  .skill p {
+    margin-top: 1rem;
+    font-size: 2rem;
+    font-weight: 600;
+    color: white;
+  }
+  
+  .skill:hover img {
+    transform: scale(1.1);
+  }
+  
+  .project {
+    padding: 2rem 9%; /* Kurangi padding bagian atas dan bawah */
+    background-color: #1f1f1f;
+    color: #333;
+}
+
+.project h2 {
+    font-size: 4rem;
+    margin-bottom: 2rem; /* Kurangi margin bawah untuk judul */
+    color: rgb(58, 127, 255);
+}
+  
+  .card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    margin-bottom: 3rem;
+    gap: 10rem;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .card img {
+    height: 250px;
+    object-fit: cover;
+    gap: 10rem;
+  }
+  
+  .card-title {
+    font-size: 1.8rem;
+  }
+  
+  .card-text {
+    font-size: 1.4rem;
+  }
+  
+  .btn-primary {
+    background-color: rgb(61, 61, 61);
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
+/* Contact Form */
+.contact {
+    padding: 2rem 9%; /* Kurangi padding bagian atas dan bawah */
+    background-color: #1f1f1f;
+    color: white;
+    text-align: center;
+    margin-bottom: 1rem; /* Kurangi margin bawah untuk memberi jarak dengan footer */
+}
+  
+  .comment-form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .comment-form .form-control {
+    background-color: #333;
+    color: white;
+    border: 1px solid rgb(58, 127, 255);
+    padding: 1rem;
+  }
+  
+  .comment-form .form-control:focus {
+    background-color: #444;
+    border-color: rgb(58, 127, 255);
+  }
+  
+  .comment-form .btn {
+    background-color: rgb(58, 127, 255);
+    color: black;
+    border: 2px solid rgb(58, 127, 255);
+    padding: 1rem 3rem;
+    margin-top: 1.5rem;
+  }
+  
+  .comment-form .btn:hover {
+    background-color: black;
+    color: rgb(58, 127, 255);
+    border-color: rgb(58, 127, 255);
+  }
+  
+  /* Footer */
+  footer {
+    padding: 2rem 9%;
+    background-color: #1f1f1f;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem; /* Kurangi margin atas untuk memperkecil jarak */
+  }
+  
+  footer p {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+  
+  footer .social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem; /* Tambahkan jarak antar ikon sosial media */
+  }
+  
+  footer .social-icon a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    background-color: transparent;
+    border: 0.2rem solid rgb(58, 127, 255);
+    font-size: 2rem;
+    border-radius: 50%;
+    transition: 0.3s;
+    color: rgb(58, 127, 255);
+  }
+  
+  footer .social-icon a:hover {
+    color: black;
+    background-color: rgb(58, 127, 255);
+    box-shadow: 0 0 25px rgb(58, 127, 255);
+  }
+  
